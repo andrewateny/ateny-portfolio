@@ -10,12 +10,18 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SkillsRouteImport } from './routes/skills'
+import { Route as FocusRouteImport } from './routes/focus'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
 const SkillsRoute = SkillsRouteImport.update({
   id: '/skills',
   path: '/skills',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FocusRoute = FocusRouteImport.update({
+  id: '/focus',
+  path: '/focus',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -32,30 +38,34 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/focus': typeof FocusRoute
   '/skills': typeof SkillsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/focus': typeof FocusRoute
   '/skills': typeof SkillsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/focus': typeof FocusRoute
   '/skills': typeof SkillsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/skills'
+  fullPaths: '/' | '/about' | '/focus' | '/skills'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/skills'
-  id: '__root__' | '/' | '/about' | '/skills'
+  to: '/' | '/about' | '/focus' | '/skills'
+  id: '__root__' | '/' | '/about' | '/focus' | '/skills'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  FocusRoute: typeof FocusRoute
   SkillsRoute: typeof SkillsRoute
 }
 
@@ -66,6 +76,13 @@ declare module '@tanstack/react-router' {
       path: '/skills'
       fullPath: '/skills'
       preLoaderRoute: typeof SkillsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/focus': {
+      id: '/focus'
+      path: '/focus'
+      fullPath: '/focus'
+      preLoaderRoute: typeof FocusRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -88,6 +105,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  FocusRoute: FocusRoute,
   SkillsRoute: SkillsRoute,
 }
 export const routeTree = rootRouteImport
