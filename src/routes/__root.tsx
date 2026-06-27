@@ -77,11 +77,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Andrew Ateny Magok — Software Engineer & Instrumentation Specialist" },
+      { name: "description", content: "Portfolio of Andrew Ateny Magok — dual-degree student bridging software engineering and electronics instrumentation." },
+      { name: "author", content: "Andrew Ateny Magok" },
+      { property: "og:title", content: "Andrew Ateny Magok — Portfolio" },
+      { property: "og:description", content: "Bridging software architecture and physical hardware. IoT, embedded systems, industrial automation." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
@@ -90,6 +90,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         rel: "stylesheet",
         href: appCss,
+      },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap",
       },
     ],
   }),
@@ -118,8 +124,85 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
+      <div className="flex min-h-screen flex-col">
+        <SiteHeader />
+        <main className="flex-1">
+          <Outlet />
+        </main>
+        <SiteFooter />
+      </div>
     </QueryClientProvider>
+  );
+}
+
+function SiteHeader() {
+  const links = [
+    { to: "/", label: "Home" },
+    { to: "/about", label: "About" },
+    { to: "/skills", label: "Skills" },
+    { to: "/focus", label: "Focus" },
+    { to: "/contact", label: "Contact" },
+  ] as const;
+  return (
+    <header className="sticky top-0 z-40 border-b border-border/40 bg-background/60 backdrop-blur-xl">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6">
+        <Link to="/" className="group flex items-center gap-2">
+          <span className="grid h-8 w-8 place-items-center rounded-lg bg-[image:var(--gradient-primary)] text-sm font-bold text-primary-foreground shadow-[var(--shadow-glow)]">
+            A
+          </span>
+          <span className="font-display text-sm font-semibold tracking-tight">Andrew Ateny</span>
+        </Link>
+        <nav className="hidden items-center gap-1 md:flex">
+          {links.map((l) => (
+            <Link
+              key={l.to}
+              to={l.to}
+              className="rounded-md px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
+              activeProps={{ className: "rounded-md px-3 py-1.5 text-sm text-foreground bg-secondary" }}
+              activeOptions={{ exact: l.to === "/" }}
+            >
+              {l.label}
+            </Link>
+          ))}
+        </nav>
+        <Link
+          to="/contact"
+          className="inline-flex items-center rounded-full bg-[image:var(--gradient-primary)] px-4 py-2 text-xs font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition-transform hover:scale-[1.03]"
+        >
+          Hire me
+        </Link>
+      </div>
+      <nav className="flex items-center justify-center gap-1 overflow-x-auto border-t border-border/40 px-2 py-2 md:hidden">
+        {links.map((l) => (
+          <Link
+            key={l.to}
+            to={l.to}
+            className="shrink-0 rounded-md px-3 py-1.5 text-xs text-muted-foreground hover:text-foreground"
+            activeProps={{ className: "shrink-0 rounded-md px-3 py-1.5 text-xs text-foreground bg-secondary" }}
+            activeOptions={{ exact: l.to === "/" }}
+          >
+            {l.label}
+          </Link>
+        ))}
+      </nav>
+    </header>
+  );
+}
+
+function SiteFooter() {
+  return (
+    <footer className="border-t border-border/40 bg-background/40">
+      <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-4 px-4 py-8 sm:px-6 md:flex-row md:items-center">
+        <div>
+          <p className="font-display text-sm font-semibold">Andrew Ateny Magok</p>
+          <p className="text-xs text-muted-foreground">Software Engineer & Instrumentation Specialist</p>
+        </div>
+        <div className="flex flex-wrap gap-4 text-xs text-muted-foreground">
+          <a href="mailto:andrewateny@gmail.com" className="hover:text-foreground">andrewateny@gmail.com</a>
+          <a href="tel:0980373802" className="hover:text-foreground">0980 373 802</a>
+          <span>© {new Date().getFullYear()}</span>
+        </div>
+      </div>
+    </footer>
   );
 }
