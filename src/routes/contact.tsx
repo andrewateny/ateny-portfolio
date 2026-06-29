@@ -17,7 +17,7 @@ export const Route = createFileRoute("/contact")({
 });
 
 const EMAIL = "andrewateny@gmail.com";
-const PHONE = "0980373802";
+const PHONE = "+211980373801";
 
 function Contact() {
   return (
@@ -28,7 +28,7 @@ function Contact() {
       <section className="mx-auto grid max-w-6xl gap-6 px-4 py-16 sm:px-6 md:grid-cols-[1fr_1.2fr]">
         <div className="space-y-4">
           <CopyCard icon={<Mail className="h-5 w-5 text-primary-glow" />} label="Email" value={EMAIL} href={`mailto:${EMAIL}`} />
-          <CopyCard icon={<Phone className="h-5 w-5 text-primary-glow" />} label="Phone" value={PHONE} href={`tel:${PHONE}`} display="0980 373 802" />
+          <CopyCard icon={<Phone className="h-5 w-5 text-primary-glow" />} label="Phone" value={PHONE} href={`tel:${PHONE}`} display="+211 980 373 801" />
         </div>
         <ContactForm />
       </section>

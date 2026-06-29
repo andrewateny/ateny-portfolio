@@ -182,8 +182,8 @@ function Home() {
               <a href="mailto:andrewateny@gmail.com" className="flex items-center gap-2 hover:text-primary-glow">
                 <Mail className="h-4 w-4" /> andrewateny@gmail.com
               </a>
-              <a href="tel:0980373802" className="flex items-center gap-2 hover:text-primary-glow">
-                <Phone className="h-4 w-4" /> 0980 373 802
+              <a href="tel:+211980373801" className="flex items-center gap-2 hover:text-primary-glow">
+                <Phone className="h-4 w-4" /> +211 980 373 801
               </a>
             </div>
           </BentoCard>

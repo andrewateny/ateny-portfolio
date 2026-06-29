@@ -201,7 +201,7 @@ function SiteFooter() {
         <SocialLinks size="sm" />
         <div className="flex flex-wrap gap-4 text-xs text-muted-foreground">
           <a href="mailto:andrewateny@gmail.com" className="hover:text-foreground">andrewateny@gmail.com</a>
-          <a href="tel:0980373802" className="hover:text-foreground">0980 373 802</a>
+          <a href="tel:+211980373801" className="hover:text-foreground">+211 980 373 801</a>
           <span>© {new Date().getFullYear()}</span>
         </div>
       </div>
