@@ -12,6 +12,8 @@ import {
   GraduationCap,
 } from "lucide-react";
 import { BentoCard } from "@/components/BentoCard";
+import { ProfileAvatar } from "@/components/ProfileAvatar";
+import { SocialLinks } from "@/components/SocialLinks";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -103,13 +105,12 @@ function Home() {
             className="relative rounded-3xl border border-border/60 bg-card/60 p-6 backdrop-blur-xl"
           >
             <div className="absolute -inset-px -z-10 rounded-3xl bg-[image:var(--gradient-primary)] opacity-30 blur-xl" />
-            <div className="flex items-center gap-3">
-              <div className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-[image:var(--gradient-primary)] text-lg font-bold text-primary-foreground">
-                A
-              </div>
-              <div className="min-w-0">
-                <p className="truncate font-display text-sm font-semibold">Dual-Degree Student</p>
-                <p className="truncate text-xs text-muted-foreground">CS · Electronics & Instrumentation</p>
+            <div className="flex flex-col items-center text-center">
+              <ProfileAvatar size="lg" />
+              <p className="mt-5 font-display text-base font-semibold">Andrew Ateny Magok</p>
+              <p className="text-xs text-muted-foreground">CS · Electronics & Instrumentation</p>
+              <div className="mt-4">
+                <SocialLinks size="sm" />
               </div>
             </div>
             <div className="mt-5 space-y-3 text-sm">
