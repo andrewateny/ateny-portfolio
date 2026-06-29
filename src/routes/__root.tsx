@@ -11,6 +11,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { SocialLinks } from "@/components/SocialLinks";
 
 function NotFoundComponent() {
   return (
@@ -192,11 +193,12 @@ function SiteHeader() {
 function SiteFooter() {
   return (
     <footer className="border-t border-border/40 bg-background/40">
-      <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-4 px-4 py-8 sm:px-6 md:flex-row md:items-center">
+      <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 px-4 py-8 sm:px-6 md:flex-row md:items-center">
         <div>
           <p className="font-display text-sm font-semibold">Andrew Ateny Magok</p>
           <p className="text-xs text-muted-foreground">Software Engineer & Instrumentation Specialist</p>
         </div>
+        <SocialLinks size="sm" />
         <div className="flex flex-wrap gap-4 text-xs text-muted-foreground">
           <a href="mailto:andrewateny@gmail.com" className="hover:text-foreground">andrewateny@gmail.com</a>
           <a href="tel:0980373802" className="hover:text-foreground">0980 373 802</a>
