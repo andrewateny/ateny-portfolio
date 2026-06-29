@@ -81,11 +81,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "Andrew Ateny Magok — Software Engineer & Instrumentation Specialist" },
       { name: "description", content: "Portfolio of Andrew Ateny Magok — dual-degree student bridging software engineering and electronics instrumentation." },
       { name: "author", content: "Andrew Ateny Magok" },
-      { property: "og:title", content: "Andrew Ateny Magok — Portfolio" },
-      { property: "og:description", content: "Bridging software architecture and physical hardware. IoT, embedded systems, industrial automation." },
+      { property: "og:title", content: "Andrew Ateny Magok — Software Engineer & Instrumentation Specialist" },
+      { property: "og:description", content: "Portfolio of Andrew Ateny Magok — dual-degree student bridging software engineering and electronics instrumentation." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Andrew Ateny Magok — Software Engineer & Instrumentation Specialist" },
+      { name: "twitter:description", content: "Portfolio of Andrew Ateny Magok — dual-degree student bridging software engineering and electronics instrumentation." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/0b1aca1c-8ba8-44e8-b50d-37e8672caf58" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/0b1aca1c-8ba8-44e8-b50d-37e8672caf58" },
     ],
     links: [
       {
