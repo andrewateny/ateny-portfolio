@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "asset_id": "b6a029c2-b499-4abd-9ca0-2c388e2e69b4",
+  "asset_id": "54006d54-bd59-4eb9-8733-6e9a02a6eae9",
   "project_id": "9fe1c6b3-f806-4165-a9a8-4162b9297953",
-  "url": "/__l5e/assets-v1/b6a029c2-b499-4abd-9ca0-2c388e2e69b4/andrew.jpg",
-  "r2_key": "a/v1/9fe1c6b3-f806-4165-a9a8-4162b9297953/b6a029c2-b499-4abd-9ca0-2c388e2e69b4/andrew.jpg",
-  "original_filename": "andrew.jpg",
-  "size": 156509,
-  "content_type": "image/jpeg",
-  "created_at": "2026-06-29T09:41:30Z"
+  "url": "/__l5e/assets-v1/54006d54-bd59-4eb9-8733-6e9a02a6eae9/andrew-portrait.png",
+  "r2_key": "a/v1/9fe1c6b3-f806-4165-a9a8-4162b9297953/54006d54-bd59-4eb9-8733-6e9a02a6eae9/andrew-portrait.png",
+  "original_filename": "andrew-portrait.png",
+  "size": 1039834,
+  "content_type": "image/png",
+  "created_at": "2026-06-29T09:46:34Z"
 }
