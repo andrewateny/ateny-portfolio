@@ -5,7 +5,7 @@ import type { ReactNode } from "react";
 const links: { label: string; href: string; icon: ReactNode; color: string; hover: string }[] = [
   {
     label: "Facebook",
-    href: "#",
+    href: "https://www.facebook.com/share/1CH9cbmU5S/",
     color: "#1877F2",
     hover: "hover:bg-[#1877F2]",
     icon: <Facebook className="h-4 w-4" fill="currentColor" />,
