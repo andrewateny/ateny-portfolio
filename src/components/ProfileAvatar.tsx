@@ -1,4 +1,4 @@
-{import React from 'react';
+import React from 'react';
 import andrewAsset from "@/assets/andrew.jpg";
 
 export function ProfileAvatar() {
