@@ -1,4 +1,4 @@
-import andrewAsset from "@/assets/andrew.jpg.asset.json";
+{import andrewAsset from "@/assets/andrew.jpg";
 
 export function ProfileAvatar({
   size = "md",
