@@ -1,7 +1,8 @@
 import React from 'react';
 import andrewAsset from "@/assets/andrew.jpg";
 
-export function ProfileAvatar() {
+export function ProfileAvatar({ size }: { size?: "sm" | "md" | "lg" } = {}) {
+  void size;
   return (
     <div className="relative inline-block rounded-full overflow-hidden w-32 h-32 md:w-40 md:h-40 border-4 border-primary/20">
       <img 
